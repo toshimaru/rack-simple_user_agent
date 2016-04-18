@@ -1,0 +1,5 @@
+source "https://rubygems.org"
+
+gem "sinatra"
+gem "pry"
+gem "rack-simple_user_agent", "0.1.0", path: "../../.."
