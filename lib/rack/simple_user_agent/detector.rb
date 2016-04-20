@@ -6,15 +6,15 @@ module Rack
       end
 
       def from_iphone?
-        user_agent.include?("iPhone")
+        user_agent.to_s.include?("iPhone")
       end
 
       def from_ipad?
-        user_agent.include?("iPad")
+        user_agent.to_s.include?("iPad")
       end
 
       def from_ipod?
-        user_agent.include?("iPod")
+        user_agent.to_s.include?("iPod")
       end
 
       def from_ios?
@@ -22,7 +22,7 @@ module Rack
       end
 
       def from_android?
-        user_agent.include?("Android")
+        user_agent.to_s.include?("Android")
       end
 
       def from_android_tablet?
@@ -34,7 +34,7 @@ module Rack
       end
 
       def from_windows_phone?
-        user_agent.include?("Windows Phone OS")
+        user_agent.to_s.include?("Windows Phone OS")
       end
 
       private
