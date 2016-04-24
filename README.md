@@ -1,4 +1,4 @@
-# Rack::SimpleUserAgent
+# Rack::SimpleUserAgent [![Build Status](https://travis-ci.org/toshimaru/rack-simple_user_agent.svg?branch=travis-ci)](https://travis-ci.org/toshimaru/rack-simple_user_agent)
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rack/simple_user_agent`. To experiment with that code, run `bin/console` for an interactive prompt.
 
