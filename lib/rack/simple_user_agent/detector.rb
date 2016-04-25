@@ -5,6 +5,10 @@ module Rack
         from_ios? || from_android? || from_windows_phone?
       end
 
+      def from_ios?
+        from_iphone? || from_ipad? || from_ipod?
+      end
+
       def from_iphone?
         user_agent.to_s.include?("iPhone")
       end
@@ -15,10 +19,6 @@ module Rack
 
       def from_ipod?
         user_agent.to_s.include?("iPod")
-      end
-
-      def from_ios?
-        from_iphone? || from_ipad? || from_ipod?
       end
 
       def from_android?
