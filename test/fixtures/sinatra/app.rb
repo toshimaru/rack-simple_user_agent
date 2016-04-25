@@ -7,6 +7,6 @@ configure do
 end
 
 get "/" do
-  binding.pry
+  request.from_smartphone?
   "Hello World!"
 end
