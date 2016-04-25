@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["me@toshimaru.net"]
 
   spec.summary       = %q{Rack::SimpleUserAgent is stupidly simple UA detector}
-  spec.description   = %q{Rack::SimpleUserAgent is stupidly simple UA detector mainly for smartphones.}
+  spec.description   = %q{Rack::SimpleUserAgent is Rack::Request extension which detects  smartphone from user-agent string. There is no complicated logic for the detection, it simply checks if user-agent includes particular string.}
   spec.homepage      = "https://github.com/toshimaru/rack-simple_user_agent"
   spec.license       = "MIT"
 
@@ -23,4 +23,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "minitest", "~> 5.0"
   spec.add_development_dependency "pry"
   spec.add_development_dependency "rack-test"
+  spec.add_development_dependency "coveralls"
 end

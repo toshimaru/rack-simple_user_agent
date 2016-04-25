@@ -1,8 +1,11 @@
 # Rack::SimpleUserAgent
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rack/simple_user_agent`. To experiment with that code, run `bin/console` for an interactive prompt.
+[![Gem Version](https://badge.fury.io/rb/rack-simple_user_agent.svg)](https://badge.fury.io/rb/rack-simple_user_agent)
+[![Build Status](https://travis-ci.org/toshimaru/rack-simple_user_agent.svg)](https://travis-ci.org/toshimaru/rack-simple_user_agent)
+[![Coverage Status](https://coveralls.io/repos/github/toshimaru/rack-simple_user_agent/badge.svg)](https://coveralls.io/github/toshimaru/rack-simple_user_agent)
+[![Code Climate](https://codeclimate.com/github/toshimaru/rack-simple_user_agent/badges/gpa.svg)](https://codeclimate.com/github/toshimaru/rack-simple_user_agent)
 
-TODO: Delete this and the text above, and describe your gem
+Rack::SimpleUserAgent is Rack::Request extension which detects  smartphone from user-agent string. There is no complicated logic for the detection, it simply checks if user-agent includes particular string.
 
 ## Installation
 
@@ -12,17 +15,46 @@ Add this line to your application's Gemfile:
 gem 'rack-simple_user_agent'
 ```
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install rack-simple_user_agent
-
 ## Usage
 
-TODO: Write usage instructions here
+### on Rails
+
+Bundling 'rack-simple_user_agent' automatically makes Rack::SimpleUserAgent methods available. It's convenient when you use the feature [Action Pack Variants](http://guides.rubyonrails.org/4_1_release_notes.html#action-pack-variants) (as of Rails4.1).
+
+- `request.from_smartphone?`
+- `request.from_android?`
+- `request.from_iphone?`
+- `request.from_windows_phone?`
+
+### on Sinatra
+
+```rb
+require "sinatra"
+require "rack/simple_user_agent"
+
+configure do
+  use Rack::SimpleUserAgent
+end
+
+get "/" do
+  request.from_smartphone?
+  "Hello World!"
+end
+```
+
+## Available Detection Methods
+
+```
+request ── from_smartphone?
+           ├── from_android?
+           │   ├── from_android_mobile?
+           │   └── from_android_tablet?
+           ├── from_iphone?
+           │   ├── from_ipad?
+           │   ├── from_iphone?
+           │   └── from_ipod?
+           └── from_windows_phone?
+```
 
 ## Development
 
@@ -32,10 +64,8 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/rack-simple_user_agent. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
-
+Bug reports and pull requests are welcome on GitHub at https://github.com/toshimaru/rack-simple_user_agent. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
