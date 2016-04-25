@@ -34,7 +34,7 @@ module Rack
       end
 
       def from_windows_phone?
-        user_agent.to_s.include?("Windows Phone OS")
+        user_agent.to_s.include?("Windows Phone")
       end
 
       private
