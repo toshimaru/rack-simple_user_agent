@@ -46,6 +46,41 @@ class Rack::SimpleUserAgentTest < Minitest::Test
     },
   }.freeze
 
+  BOT_USER_AGENT_STRINGS = {
+    googlebot_news: {
+      "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)" => {
+        from_googlebot?: true,
+        from_googlebot_news?: false,
+        from_googlebot_images?: false,
+        from_googlebot_video?: false,
+      }
+    },
+    googlebot_news: {
+      "Googlebot-News" => {
+        from_googlebot?: true,
+        from_googlebot_news?: true,
+        from_googlebot_images?: false,
+        from_googlebot_video?: false,
+      }
+    },
+    googlebot_images: {
+      "Googlebot-Image/1.0" => {
+        from_googlebot?: true,
+        from_googlebot_news?: false,
+        from_googlebot_images?: true,
+        from_googlebot_video?: false,
+      }
+    },
+    googlebot_video: {
+      "Googlebot-Video/1.0" => {
+        from_googlebot?: true,
+        from_googlebot_news?: false,
+        from_googlebot_images?: false,
+        from_googlebot_video?: true,
+      }
+    },
+  }.freeze
+
   def app
     dummy_app = ->(env) { [200, {}, 'Hello World'] }
     Rack::SimpleUserAgent.new(dummy_app)
@@ -53,6 +88,19 @@ class Rack::SimpleUserAgentTest < Minitest::Test
 
   def test_smartphone
     SMARTPHONE_USER_AGENT_STRINGS.each do |type, test_criteria|
+      test_criteria.each do |user_agent, criteria|
+        header "User-Agent", user_agent
+        get "/"
+
+        criteria.each do |method, expected_result|
+          assert_equal(last_request.send(method), expected_result)
+        end
+      end
+    end
+  end
+
+  def test_bot
+    BOT_USER_AGENT_STRINGS.each do |type, test_criteria|
       test_criteria.each do |user_agent, criteria|
         header "User-Agent", user_agent
         get "/"
