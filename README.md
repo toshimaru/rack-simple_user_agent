@@ -46,14 +46,19 @@ end
 
 ```
 request ── from_smartphone?
-           ├── from_android?
-           │   ├── from_android_mobile?
-           │   └── from_android_tablet?
-           ├── from_iphone?
-           │   ├── from_ipad?
-           │   ├── from_iphone?
-           │   └── from_ipod?
-           └── from_windows_phone?
+         │ ├── from_android?
+         │ │   ├── from_android_mobile?
+         │ │   └── from_android_tablet?
+         │ ├── from_iphone?
+         │ │   ├── from_ipad?
+         │ │   ├── from_iphone?
+         │ │   └── from_ipod?
+         │ └── from_windows_phone?
+         │
+         └ from_googlebot?
+           ├── from_googlebot_news?
+           ├── from_googlebot_images?
+           └── from_googlebot_video?
 ```
 
 ## Development
