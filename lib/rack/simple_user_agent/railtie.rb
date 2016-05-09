@@ -6,7 +6,7 @@ module Rack
 
         ActiveSupport.on_load(:action_controller) do
           ActionDispatch::Request.class_eval do
-            include Rack::SimpleUserAgent::Detector
+            include Rack::SimpleUserAgent::Detectors
           end
         end
       end
