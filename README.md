@@ -7,6 +7,8 @@
 
 Rack::SimpleUserAgent is Rack::Request extension which detects user-agent from request user-agent string. No complicated logic for the detection, it simply(stupidly) checks if user-agent includes particular string.
 
+**[ANNOUNCEMENT] Current `request.from_smartphone?` behavior is going to be changed in the next version. Please don't use `request.from_smartphone?`, use `request.from_smartphone?`, `request.from_android?` instead depending on the use case.**
+
 ## Installation
 
 Add this line to your application's `Gemfile`:
@@ -21,7 +23,7 @@ gem 'rack-simple_user_agent'
 
 Installing `rack-simple_user_agent` automatically makes all detection methods available. These methods are useful when you use the Rails' [Action Pack Variants](http://guides.rubyonrails.org/4_1_release_notes.html#action-pack-variants) (as of Rails4.1).
 
-For example:
+For example, you can use below detection methods in your Rails application.
 
 - `request.from_smartphone?`
 - `request.from_android?`
