@@ -19,7 +19,7 @@ gem 'rack-simple_user_agent'
 
 ### on Rails
 
-Bundling 'rack-simple_user_agent' automatically makes Rack::SimpleUserAgent methods available. It's convenient when you use the feature [Action Pack Variants](http://guides.rubyonrails.org/4_1_release_notes.html#action-pack-variants) (as of Rails4.1).
+Installing 'rack-simple_user_agent' automatically makes `Rack::SimpleUserAgent` methods available. These methods are convenient when you use the Rails' [Action Pack Variants](http://guides.rubyonrails.org/4_1_release_notes.html#action-pack-variants) (as of Rails4.1).
 
 - `request.from_smartphone?`
 - `request.from_android?`
@@ -49,7 +49,7 @@ request ── from_smartphone?
          │ ├── from_android?
          │ │   ├── from_android_mobile?
          │ │   └── from_android_tablet?
-         │ ├── from_iphone?
+         │ ├── from_ios?
          │ │   ├── from_ipad?
          │ │   ├── from_iphone?
          │ │   └── from_ipod?
