@@ -4,10 +4,9 @@
 [![Build Status](https://travis-ci.org/toshimaru/rack-simple_user_agent.svg)](https://travis-ci.org/toshimaru/rack-simple_user_agent)
 [![Coverage Status](https://coveralls.io/repos/github/toshimaru/rack-simple_user_agent/badge.svg)](https://coveralls.io/github/toshimaru/rack-simple_user_agent)
 [![Code Climate](https://codeclimate.com/github/toshimaru/rack-simple_user_agent/badges/gpa.svg)](https://codeclimate.com/github/toshimaru/rack-simple_user_agent)
+[![Dependency Status](https://gemnasium.com/badges/github.com/toshimaru/rack-simple_user_agent.svg)](https://gemnasium.com/github.com/toshimaru/rack-simple_user_agent)
 
 Rack::SimpleUserAgent is Rack::Request extension which detects user-agent from request user-agent string. No complicated logic for the detection, it simply(stupidly) checks if user-agent includes particular string.
-
-**[ANNOUNCEMENT] Current `request.from_smartphone?` behavior is going to be changed in the next version. Please don't use `request.from_smartphone?`, use `request.from_smartphone?`, `request.from_android?` instead depending on the use case.**
 
 ## Installation
 
