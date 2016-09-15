@@ -2,8 +2,16 @@ module Rack
   class SimpleUserAgent
     module Detectors
       module Smartphone
-        def from_smartphone?
+        def from_smartdevice?
           from_ios? || from_android? || from_windows_phone?
+        end
+
+        def from_smartphone?
+          from_iphone? || from_android_mobile? || from_windows_phone?
+        end
+
+        def from_tablet?
+          from_ipad? || from_android_tablet?
         end
 
         def from_ios?
