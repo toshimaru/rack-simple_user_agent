@@ -16,18 +16,37 @@ Add this line to your application's `Gemfile`:
 gem 'rack-simple_user_agent'
 ```
 
+## Available Detection Methods
+
+```
+request ─ from_smartdevice?
+        │ ├─ from_ios?
+        │ ├─ from_android?
+        │ └─ from_windows_phone?
+        │
+        ├ from_smartphone?
+        │ ├─ from_android_mobile?
+        │ ├─ from_iphone?
+        │ ├─ from_ipod?
+        │ └─ from_windows_phone?
+        │
+        ├ from_tablet?
+        │ ├─ from_ipad?
+        │ └─ from_android_tablet?
+        │
+        └ from_googlebot?
+          ├─ from_googlebot_news?
+          ├─ from_googlebot_images?
+          └─ from_googlebot_video?
+```
+
 ## Usage
 
 ### on Rails
 
-Installing `rack-simple_user_agent` automatically makes all detection methods available. These methods are useful when you use the Rails' [Action Pack Variants](http://guides.rubyonrails.org/4_1_release_notes.html#action-pack-variants) (as of Rails4.1).
+Installing `rack-simple_user_agent` automatically makes all detection methods available.
 
-For example, you can use below detection methods in your Rails application.
-
-- `request.from_smartphone?`
-- `request.from_android?`
-- `request.from_iphone?`
-- `request.from_windows_phone?`
+These methods are useful when you use the Rails' [Action Pack Variants](http://guides.rubyonrails.org/4_1_release_notes.html#action-pack-variants) (as of Rails4.1).
 
 ### on Sinatra
 
@@ -48,25 +67,6 @@ get "/" do
     "Hello World"
   end
 end
-```
-
-## Available Detection Methods
-
-```
-request ── from_smartphone?
-         │ ├── from_android?
-         │ │   ├── from_android_mobile?
-         │ │   └── from_android_tablet?
-         │ ├── from_ios?
-         │ │   ├── from_ipad?
-         │ │   ├── from_iphone?
-         │ │   └── from_ipod?
-         │ └── from_windows_phone?
-         │
-         └ from_googlebot?
-           ├── from_googlebot_news?
-           ├── from_googlebot_images?
-           └── from_googlebot_video?
 ```
 
 ## Development
