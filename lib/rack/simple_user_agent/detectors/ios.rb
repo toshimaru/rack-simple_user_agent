@@ -15,7 +15,7 @@ module Rack
         end
 
         def from_ipod?
-          user_agent_string.include?("iPod")
+          user_agent_string.include?("iPod touch")
         end
       end
     end
