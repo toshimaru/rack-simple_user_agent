@@ -1,9 +1,6 @@
 require 'test_helper'
-require 'rack/test'
 
-class Rack::SimpleUserAgentTest < Minitest::Test
-  include Rack::Test::Methods
-
+class Rack::SimpleUserAgentTest < BaseTest
   SMARTPHONE_USER_AGENT_STRINGS = {
     iphone: {
       "Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A403 Safari/8536.25" => {
@@ -92,11 +89,6 @@ class Rack::SimpleUserAgentTest < Minitest::Test
       }
     },
   }.freeze
-
-  def app
-    dummy_app = ->(env) { [200, {}, 'Hello World'] }
-    Rack::SimpleUserAgent.new(dummy_app)
-  end
 
   def test_smartphone
     SMARTPHONE_USER_AGENT_STRINGS.each do |type, test_criteria|
