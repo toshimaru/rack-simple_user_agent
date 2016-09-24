@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Rack::SimpleUserAgentTest < BaseTest
+class BotTest < BaseTest
   USER_AGENT_STRINGS = {
     googlebot_news: {
       "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)" => {

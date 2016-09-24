@@ -12,7 +12,7 @@ class BaseTest < Minitest::Test
   end
 
   def test_ua_strings
-    USER_AGENT_STRINGS.each do |type, test_criteria|
+    self.class::USER_AGENT_STRINGS.each do |type, test_criteria|
       test_criteria.each do |user_agent, criteria|
         header "User-Agent", user_agent
         get "/"

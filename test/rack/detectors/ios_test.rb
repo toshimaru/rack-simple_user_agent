@@ -1,7 +1,7 @@
 require 'test_helper'
 
-class Rack::SimpleUserAgentTest < BaseTest
-  SMARTPHONE_USER_AGENT_STRINGS = {
+class IosTest < BaseTest
+  USER_AGENT_STRINGS = {
     iphone: {
       "Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A403 Safari/8536.25" => {
         from_smartphone?: true,
@@ -54,17 +54,4 @@ class Rack::SimpleUserAgentTest < BaseTest
       }
     },
   }.freeze
-
-  def test_smartphone
-    SMARTPHONE_USER_AGENT_STRINGS.each do |type, test_criteria|
-      test_criteria.each do |user_agent, criteria|
-        header "User-Agent", user_agent
-        get "/"
-
-        criteria.each do |method, expected_result|
-          assert_equal(last_request.send(method), expected_result)
-        end
-      end
-    end
-  end
 end
