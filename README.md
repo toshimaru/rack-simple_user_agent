@@ -4,10 +4,9 @@
 [![Build Status](https://travis-ci.org/toshimaru/rack-simple_user_agent.svg)](https://travis-ci.org/toshimaru/rack-simple_user_agent)
 [![Coverage Status](https://coveralls.io/repos/github/toshimaru/rack-simple_user_agent/badge.svg)](https://coveralls.io/github/toshimaru/rack-simple_user_agent)
 [![Code Climate](https://codeclimate.com/github/toshimaru/rack-simple_user_agent/badges/gpa.svg)](https://codeclimate.com/github/toshimaru/rack-simple_user_agent)
+[![Dependency Status](https://gemnasium.com/badges/github.com/toshimaru/rack-simple_user_agent.svg)](https://gemnasium.com/github.com/toshimaru/rack-simple_user_agent)
 
-Rack::SimpleUserAgent is Rack::Request extension which detects user-agent from request user-agent string. No complicated logic for the detection, it simply(stupidly) checks if user-agent includes particular string.
-
-**[ANNOUNCEMENT] Current `request.from_smartphone?` behavior is going to be changed in the next version. Please don't use `request.from_smartphone?`, use `request.from_smartphone?`, `request.from_android?` instead depending on the use case.**
+Rack::SimpleUserAgent is Rack::Request extension which detects user-agent from user-agent string. No complicated logic for the detection, it simply(stupidly) checks if user-agent includes particular string or not.
 
 ## Installation
 
@@ -17,18 +16,37 @@ Add this line to your application's `Gemfile`:
 gem 'rack-simple_user_agent'
 ```
 
+## Available Detection Methods
+
+```
+request ─ from_smartdevice?
+        │ ├─ from_ios?
+        │ ├─ from_android?
+        │ └─ from_windows_phone?
+        │
+        ├ from_smartphone?
+        │ ├─ from_android_mobile?
+        │ ├─ from_iphone?
+        │ ├─ from_ipod?
+        │ └─ from_windows_phone?
+        │
+        ├ from_tablet?
+        │ ├─ from_ipad?
+        │ └─ from_android_tablet?
+        │
+        └ from_googlebot?
+          ├─ from_googlebot_news?
+          ├─ from_googlebot_images?
+          └─ from_googlebot_video?
+```
+
 ## Usage
 
 ### on Rails
 
-Installing `rack-simple_user_agent` automatically makes all detection methods available. These methods are useful when you use the Rails' [Action Pack Variants](http://guides.rubyonrails.org/4_1_release_notes.html#action-pack-variants) (as of Rails4.1).
+Installing `rack-simple_user_agent` automatically makes all detection methods available.
 
-For example, you can use below detection methods in your Rails application.
-
-- `request.from_smartphone?`
-- `request.from_android?`
-- `request.from_iphone?`
-- `request.from_windows_phone?`
+These methods are useful when you use the Rails' [Action Pack Variants](http://guides.rubyonrails.org/4_1_release_notes.html#action-pack-variants) (as of Rails4.1).
 
 ### on Sinatra
 
@@ -41,28 +59,14 @@ configure do
 end
 
 get "/" do
-  request.from_smartphone?
-  "Hello World!"
+  if request.from_smartphone?
+    "Hello World from smartphone"
+  elsif request.from_tablet?
+    "Hello World from tablet"
+  else
+    "Hello World"
+  end
 end
-```
-
-## Available Detection Methods
-
-```
-request ── from_smartphone?
-         │ ├── from_android?
-         │ │   ├── from_android_mobile?
-         │ │   └── from_android_tablet?
-         │ ├── from_ios?
-         │ │   ├── from_ipad?
-         │ │   ├── from_iphone?
-         │ │   └── from_ipod?
-         │ └── from_windows_phone?
-         │
-         └ from_googlebot?
-           ├── from_googlebot_news?
-           ├── from_googlebot_images?
-           └── from_googlebot_video?
 ```
 
 ## Development
