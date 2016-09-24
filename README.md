@@ -6,7 +6,7 @@
 [![Code Climate](https://codeclimate.com/github/toshimaru/rack-simple_user_agent/badges/gpa.svg)](https://codeclimate.com/github/toshimaru/rack-simple_user_agent)
 [![Dependency Status](https://gemnasium.com/badges/github.com/toshimaru/rack-simple_user_agent.svg)](https://gemnasium.com/github.com/toshimaru/rack-simple_user_agent)
 
-Rack::SimpleUserAgent is Rack::Request extension which detects user-agent from request user-agent string. No complicated logic for the detection, it simply(stupidly) checks if user-agent includes particular string.
+Rack::SimpleUserAgent is Rack::Request extension which detects user-agent from user-agent string. No complicated logic for the detection, it simply(stupidly) checks if user-agent includes particular string or not.
 
 ## Installation
 
@@ -40,8 +40,13 @@ configure do
 end
 
 get "/" do
-  request.from_smartphone?
-  "Hello World!"
+  if request.from_smartphone?
+    "Hello World from smartphone"
+  elsif request.from_tablet?
+    "Hello World from tablet"
+  else
+    "Hello World"
+  end
 end
 ```
 
