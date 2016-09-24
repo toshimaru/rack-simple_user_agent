@@ -16,7 +16,7 @@ module Rack
       end
 
       def from_smartphone?
-        from_iphone? || from_android_mobile? || from_windows_phone?
+        from_iphone? || from_ipod? || from_android_mobile? || from_windows_phone?
       end
 
       def from_tablet?

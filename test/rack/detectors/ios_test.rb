@@ -32,7 +32,7 @@ class IosTest < BaseTest
     ipod: {
       "Mozilla/5.0 (iPod touch; CPU iPhone OS 7_0 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0 Mobile/11A465 Safari/9537.53" => {
         from_smartdevice?: true,
-        from_smartphone?: false,
+        from_smartphone?: true,
         from_tablet?: false,
         from_ios?: true,
         from_iphone?: false,
