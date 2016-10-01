@@ -46,7 +46,26 @@ request ─ from_smartdevice?
 
 Installing `rack-simple_user_agent` automatically makes all detection methods available.
 
+#### Action Pack Variants Usage
+
 These methods are useful when you use the Rails' [Action Pack Variants](http://guides.rubyonrails.org/4_1_release_notes.html#action-pack-variants) (as of Rails4.1).
+
+```rb
+class ApplicationController < ActionController::Base
+  before_action :set_request_variant
+
+  def set_request_variant
+    request.variant = :smartphone if request.from_smartphone?
+  end
+end
+```
+
+Then, you can use two types of view. For example:
+
+```
+app/views/projects/show.html.erb
+app/views/projects/show.html+smartphone.erb
+```
 
 ### on Sinatra
 
@@ -67,6 +86,12 @@ get "/" do
     "Hello World"
   end
 end
+```
+
+## Testing
+
+```bash
+bundle exec rake test
 ```
 
 ## Development
