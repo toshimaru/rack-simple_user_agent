@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'sinatra'
-require 'pry'
 require 'rack/simple_user_agent'
 
 configure do
