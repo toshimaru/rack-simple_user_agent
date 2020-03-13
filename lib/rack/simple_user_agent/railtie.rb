@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 module Rack
   class SimpleUserAgent
     class Railtie < ::Rails::Railtie
-      initializer "rack-simple_user_agent.configure_rails_initialization" do |app|
+      initializer 'rack-simple_user_agent.configure_rails_initialization' do |app|
         app.config.middleware.use Rack::SimpleUserAgent
 
         ActiveSupport.on_load(:action_controller) do

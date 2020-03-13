@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 module Rack
   class SimpleUserAgent
     module Detectors
       module Android
         def from_android?
-          user_agent_string.include?("Android")
+          user_agent_string.include?('Android')
         end
 
         def from_android_tablet?
