@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Rack
   class SimpleUserAgent
     module Detectors
@@ -7,15 +9,15 @@ module Rack
         end
 
         def from_iphone?
-          user_agent_string.include?("iPhone;")
+          user_agent_string.include?('iPhone;')
         end
 
         def from_ipad?
-          user_agent_string.include?("iPad;")
+          user_agent_string.include?('iPad;')
         end
 
         def from_ipod?
-          user_agent_string.include?("iPod touch;")
+          user_agent_string.include?('iPod touch;')
         end
       end
     end

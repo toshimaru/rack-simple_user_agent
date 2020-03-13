@@ -1,5 +1,7 @@
-require "rack/simple_user_agent/version"
-require "rack/simple_user_agent/detectors"
+# frozen_string_literal: true
+
+require 'rack/simple_user_agent/version'
+require 'rack/simple_user_agent/detectors'
 require 'rack/simple_user_agent/railtie' if defined?(Rails)
 
 module Rack

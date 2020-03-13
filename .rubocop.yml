@@ -1,0 +1,9 @@
+inherit_from: .rubocop_todo.yml
+
+require: rubocop-minitest
+
+AllCops:
+  TargetRubyVersion: 2.3
+
+Layout/LineLength:
+  Enabled: false

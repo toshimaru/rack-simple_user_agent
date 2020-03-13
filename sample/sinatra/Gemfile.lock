@@ -1,34 +1,30 @@
 PATH
   remote: ../..
   specs:
-    rack-simple_user_agent (0.3.0)
+    rack-simple_user_agent (0.4.0)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    coderay (1.1.2)
-    method_source (0.9.1)
-    mustermann (1.0.3)
-    pry (0.11.3)
-      coderay (~> 1.1.0)
-      method_source (~> 0.9.0)
-    rack (2.0.5)
-    rack-protection (2.0.4)
+    mustermann (1.1.1)
+      ruby2_keywords (~> 0.0.1)
+    rack (2.2.2)
+    rack-protection (2.0.8.1)
       rack
-    sinatra (2.0.4)
+    ruby2_keywords (0.0.2)
+    sinatra (2.0.8.1)
       mustermann (~> 1.0)
       rack (~> 2.0)
-      rack-protection (= 2.0.4)
+      rack-protection (= 2.0.8.1)
       tilt (~> 2.0)
-    tilt (2.0.8)
+    tilt (2.0.10)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  pry
   rack-simple_user_agent!
   sinatra
 
 BUNDLED WITH
-   1.17.1
+   2.1.2

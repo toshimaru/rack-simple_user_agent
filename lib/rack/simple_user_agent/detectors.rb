@@ -1,7 +1,9 @@
-require "rack/simple_user_agent/detectors/android"
-require "rack/simple_user_agent/detectors/bot"
-require "rack/simple_user_agent/detectors/ios"
-require "rack/simple_user_agent/detectors/windows_phone"
+# frozen_string_literal: true
+
+require 'rack/simple_user_agent/detectors/android'
+require 'rack/simple_user_agent/detectors/bot'
+require 'rack/simple_user_agent/detectors/ios'
+require 'rack/simple_user_agent/detectors/windows_phone'
 
 module Rack
   class SimpleUserAgent
