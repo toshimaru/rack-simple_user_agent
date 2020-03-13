@@ -2,8 +2,8 @@
 
 $LOAD_PATH.unshift File.expand_path('../lib', __dir__)
 
-require 'coveralls'
-Coveralls.wear!
+require 'simplecov'
+SimpleCov.start
 require 'minitest/reporters'
 Minitest::Reporters.use!
 
