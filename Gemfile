@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 # Specify your gem's dependencies in rack-simple_user_agent.gemspec
 gemspec
 
+gem 'coveralls'
 gem 'rubocop'
 gem "minitest-reporters"
 gem "minitest", "~> 5.0"
