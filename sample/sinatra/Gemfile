@@ -1,5 +1,7 @@
-source "https://rubygems.org"
+# frozen_string_literal: true
 
-gem "sinatra"
-gem "pry"
-gem "rack-simple_user_agent", path: "../.."
+source 'https://rubygems.org'
+
+gem 'pry'
+gem 'rack-simple_user_agent', path: '../..'
+gem 'sinatra'
