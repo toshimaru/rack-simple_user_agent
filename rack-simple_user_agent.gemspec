@@ -17,14 +17,6 @@ Gem::Specification.new do |spec|
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
-  
-  spec.required_ruby_version = ">= 2.2.2"
 
-  spec.add_development_dependency "bundler", "~> 1.11"
-  spec.add_development_dependency "rake", "~> 11.0"
-  spec.add_development_dependency "minitest", "~> 5.0"
-  spec.add_development_dependency "minitest-reporters"
-  spec.add_development_dependency "pry"
-  spec.add_development_dependency "rack-test"
-  spec.add_development_dependency "coveralls"
+  spec.required_ruby_version = ">= 2.3.2"
 end
