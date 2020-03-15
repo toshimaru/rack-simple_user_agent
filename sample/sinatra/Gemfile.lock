@@ -1,7 +1,7 @@
 PATH
   remote: ../..
   specs:
-    rack-simple_user_agent (0.4.0)
+    rack-simple_user_agent (0.5.0)
 
 GEM
   remote: https://rubygems.org/
