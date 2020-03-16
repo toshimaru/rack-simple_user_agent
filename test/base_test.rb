@@ -20,7 +20,7 @@ class BaseTest < Minitest::Test
         get '/'
 
         criteria.each do |method, expected_result|
-          assert_equal(expected_result, last_request.send(method), "#{type}.#{method} should be #{expected_result}")
+          assert_equal(expected_result, last_request.public_send(method), "#{type}.#{method} should be #{expected_result}")
         end
       end
     end
