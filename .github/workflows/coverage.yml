@@ -9,7 +9,6 @@ on:
 jobs:
   coverage:
     runs-on: ubuntu-latest
-    name: CodeClimate report
     steps:
     - uses: actions/checkout@v2
     - name: Set up Ruby
