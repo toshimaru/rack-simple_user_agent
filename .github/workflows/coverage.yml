@@ -1,7 +1,13 @@
 name: Coverage
-on: [push]
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
 jobs:
-  build:
+  coverage:
     runs-on: ubuntu-latest
     name: CodeClimate report
     steps:
@@ -10,7 +16,7 @@ jobs:
       uses: actions/setup-ruby@v1
       with:
         ruby-version: 2.6
-    - run: bundle install
+        bundler-cache: true
     - uses: paambaati/codeclimate-action@v2.5.4
       env:
         CC_TEST_REPORTER_ID: 40cc6409f7d531fa06fe880b7d7e4bd81ff89efcaa4dee782e03fb8fb3cdb902
