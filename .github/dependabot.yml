@@ -1,0 +1,14 @@
+version: 2
+updates:
+  - package-ecosystem: bundler
+    directory: "/sample/sinatra"
+    schedule:
+      interval: monthly
+    reviewers:
+      - toshimaru
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: monthly
+    reviewers:
+      - toshimaru
