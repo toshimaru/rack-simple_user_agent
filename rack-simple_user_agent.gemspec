@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
-lib = File.expand_path('lib', __dir__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'rack/simple_user_agent/version'
+require_relative 'lib/rack/simple_user_agent/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'rack-simple_user_agent'
