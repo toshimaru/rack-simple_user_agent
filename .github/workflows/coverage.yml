@@ -10,14 +10,14 @@ jobs:
   coverage:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: 2.6
-        bundler-cache: true
-    - uses: paambaati/codeclimate-action@v3.2.0
-      env:
-        CC_TEST_REPORTER_ID: 40cc6409f7d531fa06fe880b7d7e4bd81ff89efcaa4dee782e03fb8fb3cdb902
-      with:
-        coverageCommand: bundle exec rake
+      - uses: actions/checkout@v3
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.2
+          bundler-cache: true
+      - uses: paambaati/codeclimate-action@v3.2.0
+        env:
+          CC_TEST_REPORTER_ID: 40cc6409f7d531fa06fe880b7d7e4bd81ff89efcaa4dee782e03fb8fb3cdb902
+        with:
+          coverageCommand: bundle exec rake
