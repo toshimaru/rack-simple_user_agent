@@ -16,7 +16,7 @@ jobs:
         with:
           ruby-version: 3.3
           bundler-cache: true
-      - uses: paambaati/codeclimate-action@v5.0.0
+      - uses: paambaati/codeclimate-action@v6.0.0
         env:
           CC_TEST_REPORTER_ID: 40cc6409f7d531fa06fe880b7d7e4bd81ff89efcaa4dee782e03fb8fb3cdb902
         with:
