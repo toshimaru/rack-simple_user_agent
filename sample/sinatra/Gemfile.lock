@@ -1,7 +1,7 @@
 PATH
   remote: ../..
   specs:
-    rack-simple_user_agent (0.5.0)
+    rack-simple_user_agent (1.1.1)
 
 GEM
   remote: https://rubygems.org/
@@ -29,4 +29,4 @@ DEPENDENCIES
   sinatra
 
 BUNDLED WITH
-   2.1.2
+   2.6.5
