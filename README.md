@@ -3,8 +3,8 @@
 [![Gem Version](https://badge.fury.io/rb/rack-simple_user_agent.svg)](https://badge.fury.io/rb/rack-simple_user_agent)
 ![Test](https://github.com/toshimaru/rack-simple_user_agent/workflows/Test/badge.svg)
 ![RuboCop](https://github.com/toshimaru/rack-simple_user_agent/workflows/RuboCop/badge.svg)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/576b6f673fc00d07da0d/test_coverage)](https://codeclimate.com/github/toshimaru/rack-simple_user_agent/test_coverage)
-[![Code Climate](https://codeclimate.com/github/toshimaru/rack-simple_user_agent/badges/gpa.svg)](https://codeclimate.com/github/toshimaru/rack-simple_user_agent)
+[![Code Coverage](https://qlty.sh/gh/toshimaru/projects/rack-simple_user_agent/coverage.svg)](https://qlty.sh/gh/toshimaru/projects/rack-simple_user_agent)
+[![Maintainability](https://qlty.sh/gh/toshimaru/projects/rack-simple_user_agent/maintainability.svg)](https://qlty.sh/gh/toshimaru/projects/rack-simple_user_agent)
 
 `Rack::SimpleUserAgent` is `Rack::Request` extension which detects user-agent from user-agent string. No complicated logic for the detection, it simply(stupidly) checks if user-agent includes particular string or not.
 
