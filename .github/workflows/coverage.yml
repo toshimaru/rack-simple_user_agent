@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   coverage:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     permissions:
       id-token: write
     steps:
@@ -20,7 +20,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.4
+          ruby-version: "4.0"
           bundler-cache: true
       - name: Run tests
         run: bundle exec rake
