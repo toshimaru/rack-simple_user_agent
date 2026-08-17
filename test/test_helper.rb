@@ -3,7 +3,16 @@
 $LOAD_PATH.unshift File.expand_path('../lib', __dir__)
 
 require 'simplecov'
-SimpleCov.start
+require 'simplecov_json_formatter'
+SimpleCov.start do
+  formatter SimpleCov::Formatter::MultiFormatter.new(
+    [
+      SimpleCov::Formatter::JSONFormatter,
+      SimpleCov::Formatter::HTMLFormatter
+    ]
+  )
+  add_filter '/test/'
+end
 require 'minitest/reporters'
 Minitest::Reporters.use!
 
