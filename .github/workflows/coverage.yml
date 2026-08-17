@@ -27,4 +27,4 @@ jobs:
       - uses: qltysh/qlty-action/coverage@v2
         with:
           oidc: true
-          files: coverage/coverage.json
+          files: coverage/.resultset.json
